@@ -6,5 +6,6 @@ import lombok.Data;
 public class OsuDatabase {
 
     private int osuVersion;
+    private int folderCount;
 
 }

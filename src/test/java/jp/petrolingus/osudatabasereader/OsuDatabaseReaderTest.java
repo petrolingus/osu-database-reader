@@ -11,6 +11,7 @@ public class OsuDatabaseReaderTest {
 
         OsuDatabase expected = new OsuDatabase();
         expected.setOsuVersion(20200111);
+        expected.setFolderCount(1744);
 
         OsuDatabase actual = OsuDatabaseReader.read("D:\\MyOsuList\\osu!.db");
 

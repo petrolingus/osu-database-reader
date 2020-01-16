@@ -17,11 +17,12 @@ public class OsuDatabaseReader {
             byteBuffer = ByteBuffer.wrap(buffer);
             byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("Could't read osu!.db: " + path, e);
         }
 
         OsuDatabase database = new OsuDatabase();
-        database.setOsuVersion(20200111);
+        database.setOsuVersion(getOsuVersion(byteBuffer));
+        database.setFolderCount(getFolderCount(byteBuffer));
 
         return database;
     }
