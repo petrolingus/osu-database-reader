@@ -8,9 +8,9 @@ import java.nio.file.Paths;
 
 public class OsuDatabaseReader {
 
-    ByteBuffer byteBuffer;
+    public static void read(String path) {
 
-    public void read(String path) {
+        ByteBuffer byteBuffer;
 
         try {
             byte[] buffer = Files.readAllBytes(Paths.get(path));
@@ -21,5 +21,7 @@ public class OsuDatabaseReader {
         }
 
     }
+
+
 
 }
