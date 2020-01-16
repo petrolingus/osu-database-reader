@@ -22,6 +22,22 @@ public class OsuDatabaseReader {
 
     }
 
+    private static int getOsuVersion(ByteBuffer byteBuffer) {
+        return byteBuffer.getInt();
+    }
+
+    private static int getFolderCount(ByteBuffer byteBuffer) {
+        return byteBuffer.getInt();
+    }
+
+    private static boolean getAccountUnlocked(ByteBuffer byteBuffer) {
+        return byteBuffer.get() != 0;
+    }
+
+    private static long getDateTime(ByteBuffer byteBuffer) {
+        return byteBuffer.getLong();
+    }
+
 
 
 }
