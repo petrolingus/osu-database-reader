@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class OsuDatabaseReader {
 
-    public static void read(String path) {
+    public static OsuDatabase read(String path) {
 
         ByteBuffer byteBuffer;
 
@@ -20,6 +20,10 @@ public class OsuDatabaseReader {
             e.printStackTrace();
         }
 
+        OsuDatabase database = new OsuDatabase();
+        database.setOsuVersion(20200111);
+
+        return database;
     }
 
     private static int getOsuVersion(ByteBuffer byteBuffer) {
